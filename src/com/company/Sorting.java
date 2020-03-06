@@ -17,7 +17,9 @@ public class Sorting {
         return list;
     }
     public static boolean isSorted(ArrayList<Integer> arr){
-        for (int i = 0; i <= 8; i++)
+        for (int i = 0; i <= 8; i++){
+
+        }
         return true;
     }
 
