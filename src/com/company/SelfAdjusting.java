@@ -1,10 +1,12 @@
 package com.company;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SelfAdjusting {
-    private ArrayList<Integer> list = new ArrayList<Integer>();
+    private ArrayList<Integer> list;
 
     public SelfAdjusting(ArrayList<Integer> arr){
         list = arr;
@@ -14,9 +16,23 @@ public class SelfAdjusting {
         return list;
     }
 
-    public void adjustList(ArrayList<Integer>){
-        Scanner scanner = new Scanner(System.in);
-        String full = scanner.nextLine();
+    public void adjustList() throws FileNotFoundException {
+       ArrayList<Integer> arr = new ArrayList<Integer>();
+        arr.add(2); arr.add(4); arr.add(6); arr.add(8); arr.add(10);
+        arr.add(12); arr.add(14); arr.add(16); arr.add(18); arr.add(20);
 
+        for (int x = 0; x < list.size(); x++) {
+            int test = 1;
+            while (test != 0) {
+                test = list.get(x);
+                arr.add(0, test);
+                for (int i = 1; i < arr.size(); i++) {
+                    if (arr.get(i) == test) {
+                        arr.remove(i);
+                    }
+                }
+            }
+        }
+        System.out.println(arr);
     }
 }
