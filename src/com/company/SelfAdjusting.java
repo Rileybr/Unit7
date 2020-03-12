@@ -22,15 +22,15 @@ public class SelfAdjusting {
         arr.add(12); arr.add(14); arr.add(16); arr.add(18); arr.add(20);
 
         for (int x = 0; x < list.size(); x++) {
-            int test = 1;
+            int test = list.get(x);
             while (test != 0) {
-                test = list.get(x);
                 arr.add(0, test);
                 for (int i = 1; i < arr.size(); i++) {
                     if (arr.get(i) == test) {
                         arr.remove(i);
                     }
                 }
+                break;
             }
         }
         System.out.println(arr);
